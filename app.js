@@ -1,13 +1,16 @@
 import express from 'express';
 import {db} from './basedatos.js'
 import {shevento} from './controllers/eventcontrollers.js'
+import {showuser} from './controllers/usuariocontrollers.js'
 
 const router= express.Router();
 const app = express();
 
 app.use('/',router);
 
-app.use('/eventos', shevento)
+router.get('/eventos', shevento)
+
+router.get('/usuarios',showuser)
 
 router.get('/', (req,res) => {
     res.send("🚀😎 Deploy en Heroku🚀🚀")
