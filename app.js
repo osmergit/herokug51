@@ -1,16 +1,13 @@
 import express from 'express';
-import {db} from './basedatos.js'
-import {shevento} from './controllers/eventcontrollers.js'
-import {showuser} from './controllers/usuariocontrollers.js'
+import {db} from './mongodb.js';
+import cors from 'cors';
+import {router} from './routes/routes.js'
 
-const router= express.Router();
 const app = express();
-
+app.use(cors());
+app.use(express.json());
 app.use('/',router);
 
-router.get('/eventos', shevento)
-
-router.get('/usuarios',showuser)
 
 router.get('/', (req,res) => {
     res.send("🚀😎 Deploy en Heroku🚀🚀")
