@@ -28,9 +28,9 @@ router.put('/shuser/:id', upuser);
 //rutas para los eventos deportivos
 //funciona
 router.post('/regevento', regevento);
-//router.get('/shevento',requireToken, shevento);
+router.get('/shevento',requireToken, shevento);
 //funciona
-router.get('/shevento', shevento);
+//router.get('/shevento', shevento);
 //funciona
 router.get('/shevento/:id', shonevent);
 //funciona
